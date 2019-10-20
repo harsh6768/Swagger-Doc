@@ -158,6 +158,41 @@ let getPostByAuthor=(req,res)=>{
 
 let updatePost=(req,res)=>{
 
+    const {id,title,body}=req.body;
+
+    try{
+
+       Post.update(
+           {
+           title,body
+           },
+           {
+               where:{
+                   id
+               }
+           }
+        )
+        .then(post=>{
+
+            res.status(200).send({
+                status:200,
+                body:post,
+                message:'Post Updated'
+            })
+
+        })
+        .catch(err=>{
+
+            res.status(500).send({
+                status:500,
+                body:err.message,
+                message:'Error occured'
+            })
+        })
+
+    }catch(err){
+        throw err;
+    }
 
 }
 
