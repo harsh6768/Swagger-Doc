@@ -43,7 +43,7 @@ const initEndPoint=(app)=>{
      *                  type: string
      * 
      */
-
+    
     app.use('/',routes);
 }
 
