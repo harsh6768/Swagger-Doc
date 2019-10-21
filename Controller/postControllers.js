@@ -34,7 +34,7 @@ let getPosts=(req,res)=>{
             res.status(200).send({
 
                 status:200,
-                body:[posts],
+                body:posts,
                 message:'Posts Details'
             })
         })
@@ -87,74 +87,75 @@ let getPostById=(req,res)=>{
     }
 }
 
-let getPostByTitle=(req,res)=>{
+// let getPostByTitle=(req,res)=>{
 
-    const title=req.params.title;
+//     const title=req.params.title;
+ 
+//     try{
 
-    try{
+//         Post.findAll({
+//             where:{
+//                 title
+//             }
+//         })
+//         .then(posts=>{
 
-        Post.findAll({
-            where:{
-                title:title
-            }
-        })
-        .then(posts=>{
-            res.status(200).send({
+//             res.status(200).send({
 
-                status:200,
-                body:posts,
-                message:'Post Details'
-            })
-        })
-        .catch(err=>{
-            res.status(500).send({
-                status:500,
-                body:err.message,
-                message:'Error occured'
-            })
-        })
+//                 status:200,
+//                 body:posts,
+//                 message:'Post Details'
+//             })
+//         })
+//         .catch(err=>{
+//             res.status(500).send({
+//                 status:500,
+//                 body:err.message,
+//                 message:'Error occured'
+//             })
+//         })
 
-    }catch(err){
-        throw err;
-    }
+//     }catch(err){
+//         throw err;
+//     }
 
-}
+// }
 
-let getPostByAuthor=(req,res)=>{
+// let getPostByAuthor=(req,res)=>{
 
 
-    const author=req.params.author;
+//     const author=req.params.author;
 
-    try{
+//     try{
         
-        Post.findAll({
-            where:{
-                author:author
-            }
-        })
-        .then(posts=>{
+//         Post.findAll({
+//             where:{
+//                 author:author
+//             }
+//         })
+//         .then(posts=>{
 
-            res.status(200).send({
-                status:200,
-                body:[posts],
-                message:'Posts Detail'
-            })
-        })
-        .catch(err=>{
+//             res.status(200).send({
+//                 status:200,
+//                 body:[posts],
+//                 message:'Posts Detail'
+//             })
+//         })
+//         .catch(err=>{
 
-            res.status(500).send({
-                status:500,
-                body:err.message,
-                message:'Error occured'
-            })
-        })
+//             res.status(500).send({
+//                 status:500,
+//                 body:err.message,
+//                 message:'Error occured'
+//             })
+//         })
 
 
-    }catch(err){
+//     }catch(err){
 
-        throw err;
-    }
-}
+//         throw err;
+//     }
+// }
 
 let updatePost=(req,res)=>{
 
@@ -233,8 +234,8 @@ module.exports={
     createPost,
     getPosts,
     getPostById,
-    getPostByTitle,
-    getPostByAuthor,
+    // getPostByTitle,
+    // getPostByAuthor,
     updatePost,
     deletePost
 }

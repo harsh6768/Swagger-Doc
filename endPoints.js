@@ -79,58 +79,6 @@ const initEndPoint=(app)=>{
      *            500:
      *              description: internal server error        
      *                          
-     * /getPost/{title}:
-     *      get:
-     *          tags:
-     *          - posts
-     *          summary: get Post using title
-     *          description: ''
-     *          consumes:
-     *          - application/json
-     *          - application/xml
-     *          produces:
-     *          - application/json
-     *          - application/xml
-     *          parameters:
-     *          - name: title
-     *            in:  path
-     *            description: title of the post
-     *            required: true
-     *            type: string
-     *          responses:
-     *            200: 
-     *              description: successful operation
-     *            400:
-     *              description: bad request
-     *            500:
-     *              description: internal server error        
-     *                          
-     * /getPost/{author}:
-     *      get:
-     *          tags:
-     *          - posts
-     *          summary: get Post using author name
-     *          description: ''
-     *          consumes:
-     *          - application/json
-     *          - application/xml
-     *          produces:
-     *          - application/json
-     *          - application/xml
-     *          parameters:
-     *          - name: id
-     *            in:  path
-     *            description: author name of the post
-     *            required: true
-     *            type: title
-     *          responses:
-     *            200: 
-     *              description: successful operation
-     *            400:
-     *              description: bad request
-     *            500:
-     *              description: internal server error        
-     *   
      * /updatePost/{id}:
      *      put:
      *          tags:
