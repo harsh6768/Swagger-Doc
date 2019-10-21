@@ -159,13 +159,13 @@ let getPostByAuthor=(req,res)=>{
 let updatePost=(req,res)=>{
 
     const id=req.params.id;
-    const {title,body}=req.body;
+    const {title,body,author}=req.body;
 
     try{
 
        Post.update(
            {
-           title,body
+           title,body,author
            },
            {
                where:{
